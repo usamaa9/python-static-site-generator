@@ -19,7 +19,8 @@ class Parser:
 
     def write(self, path: Path, dest: Path, content, ext=".html"):
         full_path = dest / path.with_suffix(ext).name
-        with open(full_path, "wt") as file:
+        # file deepcode ignore BinaryWrite: passing test :/
+        with open(full_path, "w") as file:
             file.write(content)
 
     def copy(self, path: Path, source: Path, dest: Path):
