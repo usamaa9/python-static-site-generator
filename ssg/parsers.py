@@ -5,7 +5,7 @@ from pathlib import Path
 
 class Parser:
 
-    extensions = []  # type: List[str]
+    extensions: List[str] = []
 
     def valid_extension(self, extension):
         return extension in self.extensions
@@ -29,7 +29,7 @@ class Parser:
 
 class ResourceParser(Parser):
 
-    extensions = [".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg"]
+    extensions = [".jpg", ".png", ".gif", ".css", ".html"]
 
     def parse(self, path: Path, source: Path, dest: Path):
         self.copy(path, source, dest)
